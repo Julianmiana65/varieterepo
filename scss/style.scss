@@ -1,0 +1,140 @@
+$bgcolor: #3399FF;
+$bgcolor-comics: #0054a9;
+$bgcolor-games: #81c0ff;
+$bgcolor-lit:#6e98fa;
+$title-font: normal 24px/1.5 'Open Sans', sans-serif;
+$border: 5px solid;
+$font-color: #f8f8ff;
+ @mixin sizes($width, $height) {
+  height: $height;
+  width: $width;
+}
+@mixin lists ($list-style-type) 
+{
+  list-style-type: $list-style-type;
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body
+{display: grid;
+  margin-left: 150px;
+  background-color: $bgcolor;
+  grid-template-rows: 35% 20% 20%;
+  grid-template-columns: 30% 30% 30%;
+  grid-template-areas: 
+  "header header header"
+  "container1 container2 container3"
+  "container4 container5 container6"
+  "footer footer footer";}
+
+div{
+height: 800px;
+width: auto;}
+a
+{text-decoration: none;
+color: $font-color;}
+
+header.block__header {
+background-color:$bgcolor;
+font: $title-font/2;
+grid-area: header;
+margin: 10px;
+text-align:center; 
+@include lists(list-style-type none); }
+
+ul li a {
+text-decoration: none;
+font: $title-font;
+color: $font-color; 
+@include lists(list-style-type none);}
+
+li {
+  list-style: none;
+  list-style-type: none;
+}
+
+
+p {
+  margin: 20px/2;
+  padding: 20px/2;
+}
+
+div.block__container1 {
+  background-color:$bgcolor-comics;
+  border: $border;
+  grid-area: container1;
+  font: $title-font;
+  color: $font-color;
+  margin:20px/2;
+  text-align:center;}
+
+div.block__container2 {
+  background-color:$bgcolor-games;
+  border: $border;
+  font: $title-font;
+  grid-area: container2;
+  color: $font-color;
+  margin:20px/2; 
+  text-align:center;}
+
+
+div.block__container3 {
+  background-color:$bgcolor-lit;
+  border: $border;
+  font: $title-font;
+  grid-area:container3;
+  color: $font-color;
+  margin:20px/2;
+  text-align:center;}
+
+div.block__container4 {
+  background-color:$bgcolor-comics;
+  border: $border;
+  font: $title-font;
+  grid-area:container4;
+  color: $font-color;
+  margin:20px/2;
+  text-align:center;
+padding: 30px;}
+
+div.block__container5 {
+  background-color:$bgcolor-games;
+  border: $border;
+  font: $title-font;
+  grid-area:container5;
+  color: $font-color;
+  margin:20px/2;
+  text-align:center;
+  padding: 30px;}
+
+div.block__container6 {
+  background-color:$bgcolor-lit;
+  border: $border;
+  font: $title-font;
+  grid-area: container6;
+  color: $font-color;
+  margin:20px/2;
+  text-align:center;
+  padding: 30px;}
+
+
+div button
+{
+  @include sizes(150px,60px);
+text-align: center;}
+
+
+.block__footer
+{background-color:$bgcolor;
+border: $border;
+font: $title-font;
+color: $font-color;
+grid-area:footer;
+text-decoration: none;
+list-style-type: none;
+}
